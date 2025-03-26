@@ -63,6 +63,9 @@ ul {
 /* End Global Rules */
 /* Start Header */
 .header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: white;
   position: relative;
   -webkit-box-shadow: 0 0 10px #ddd;
@@ -71,14 +74,10 @@ ul {
 }
 .header .container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
   position: relative;
 }
 .header_logo {
   height: 72px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
