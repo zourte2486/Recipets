@@ -3,25 +3,25 @@ import React, { useState } from "react";
 const Content = () => {
 
 
-  const [ingredients,setingredients] = useState([]);
-
-  const handelSubmit = (event) => {
-
-    event.preventDefault();
-    const formData = new FormData(event.currentTarget);
-    const newIngredient = formData.get("ingredient");
-    setingredients( prevIngredients => [...prevIngredients, newIngredient]);
-
-  };
+  const [ingredients, setingredients] = useState([]);
 
   const ingredientsList = ingredients.map((ingredient, index) => (
     <li key={index}>{ingredient}</li>
   ));
 
+  const handelSubmit = (formData) => {
+
+    const newIngredient = formData.get("ingredient");
+    setingredients( prevIngredients => [...prevIngredients, newIngredient]);
+
+  };
+
+ 
+
   return (
 
     <main>
-      <form onSubmit={handelSubmit} className="add-ingredient-form">
+      <form action={handelSubmit} className="add-ingredient-form">
         <input
           type="text"
           placeholder="e.g. oregano"
